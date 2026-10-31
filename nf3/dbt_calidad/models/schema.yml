@@ -5,5 +5,10 @@ models:
     columns:
       - name: id_alerta
         tests: [unique, not_null]
-      # TODO severidad: añade tests not_null y accepted_values
-      #   (valores válidos: baja, media, alta, critica)
+
+      - name: severidad
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["baja", "media", "alta", "critica"]
+
